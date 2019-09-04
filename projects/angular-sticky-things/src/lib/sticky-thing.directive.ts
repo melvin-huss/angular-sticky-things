@@ -221,7 +221,7 @@ export class StickyThingDirective implements OnInit, AfterViewInit, OnDestroy {
 
   private determineStatus(originalVals: StickyPositions, pageYOffset: number, marginTop: number, marginBottom: number, enabled: boolean): StickyStatus {
     const stickyElementHeight = this.getComputedStyle(this.stickyElement.nativeElement).height;
-    const reachedLowerEdge = this.boundaryElement && window.pageYOffset + stickyElementHeight + marginBottom >= (originalVals.bottomBoundary - marginTop);
+    const reachedLowerEdge = this.boundaryElement && pageYOffset + stickyElementHeight + marginBottom >= (originalVals.bottomBoundary - marginTop);
     return {
       isSticky: enabled && pageYOffset > originalVals.offsetY,
       reachedLowerEdge,
